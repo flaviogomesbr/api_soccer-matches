@@ -22,7 +22,7 @@ public interface SoccerMatchesRepository extends JpaRepository<SoccerMatchesMode
     @Query("SELECT p FROM SoccerMatchesModel p WHERE ABS(p.resultadoClubeMandante - p.resultadoClubeVisitante) >= 3")
     List<SoccerMatchesModel> buscaGoleada();
 
-    @Query("SELECT p FROM SoccerMatchesModel p WHERE p.estadio = ?1" )
+    @Query("SELECT p FROM SoccerMatchesModel p WHERE p.estadio = ?1")
     List<SoccerMatchesModel> buscaPartidasPorEstadio(String estadio);
 
     @Query("SELECT p FROM SoccerMatchesModel p WHERE p.nomeClubeMandante = ?1 OR p.nomeClubeVisitante = ?1")

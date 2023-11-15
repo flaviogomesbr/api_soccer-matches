@@ -19,7 +19,7 @@ public class SoccerMatchesModel {
 
     @Getter
     @Column(nullable = false)
-    private int  resultadoClubeMandante;
+    private int resultadoClubeMandante;
 
     @Getter
     @Column(nullable = false)
@@ -27,7 +27,7 @@ public class SoccerMatchesModel {
 
     @Getter
     @Column(nullable = false)
-    private int  resultadoClubeVisitante;
+    private int resultadoClubeVisitante;
 
     @Getter
     @Column(nullable = false)
@@ -37,10 +37,11 @@ public class SoccerMatchesModel {
     @Column(nullable = false)
     private String estadio;
 
-    public void setId(Long id){
+    public void setId(Long id) {
         this.id = id;
     }
-    public Long getId(){
+
+    public Long getId() {
         return id;
     }
 
