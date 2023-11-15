@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "9fb9cd00-1fe7-47b4-b185-ccff0b3d60df",
+		"name": "00_MELI_JavaSpringBoot_api_soccerMatches",
+		"description": "API Soccer Matches",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13702584"
+	},
+	"item": [
+		{
+			"name": "GET - todas as partidas",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/html",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:8080/soccer-matches"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - por estadio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/soccer-matches/porEstadio/Maracana",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soccer-matches",
+						"porEstadio",
+						"Maracana"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - por Clube",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/porClube/Sport"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Goleada",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/buscaGoleada"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Sem Gols",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/partidaSemGols"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Clube Visitante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/porClubeVisitante/Sport"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Clube Mandante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/porClubeMandante/Bahia"
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Inserir registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/html",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeClubeMandante\": \"Canadá\",\n    \"resultadoClubeMandante\": 0,\n    \"nomeClubeVisitante\": \"Argentina\",\n    \"resultadoClubeVisitante\": 7,\n    \"dataHora\": \"10/09/2023 - 22:00\",\n    \"estadio\": \"Maracana\"\n}"
+				},
+				"url": "http://localhost:8080/soccer-matches"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - atualizar partida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeClubeMandante\": \"Nautico\",\n    \"resultadoClubeMandante\": 1,\n    \"nomeClubeVisitante\": \"Sport\",\n    \"resultadoClubeVisitante\": 2,\n    \"dataHora\": \"01/01/2023 - 12:00\",\n    \"estadio\": \"Maracana\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/soccer-matches/12"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETA por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/2"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETA todos os registros",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/soccer-matches/deletaTudo"
+			},
+			"response": []
+		}
+	]
+}
