@@ -5,10 +5,12 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class SoccerMatchesDto {
@@ -31,56 +33,28 @@ public class SoccerMatchesDto {
     private String estadio;
 
 
-    public Long getId() {
-        return id;
-    }
-
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getNomeClubeMandante() {
-        return nomeClubeMandante;
     }
 
     public void setNomeClubeMandante(String nomeClubeMandante) {
         this.nomeClubeMandante = nomeClubeMandante;
     }
 
-    public int getResultadoClubeMandante() {
-        return resultadoClubeMandante;
-    }
-
     public void setResultadoClubeMandante(int resultadoClubeMandante) {
         this.resultadoClubeMandante = resultadoClubeMandante;
-    }
-
-    public String getNomeClubeVisitante() {
-        return nomeClubeVisitante;
     }
 
     public void setNomeClubeVisitante(String nomeClubeVisitante) {
         this.nomeClubeVisitante = nomeClubeVisitante;
     }
 
-    public int getResultadoClubeVisitante() {
-        return resultadoClubeVisitante;
-    }
-
     public void setResultadoClubeVisitante(int resultadoClubeVisitante) {
         this.resultadoClubeVisitante = resultadoClubeVisitante;
     }
 
-    public LocalDateTime getDataHora() {
-        return dataHora;
-    }
-
     public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
-    }
-
-    public String getEstadio() {
-        return estadio;
     }
 
     public void setEstadio(String estadio) {

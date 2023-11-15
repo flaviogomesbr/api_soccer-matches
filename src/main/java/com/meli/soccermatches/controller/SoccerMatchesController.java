@@ -5,7 +5,6 @@ import com.meli.soccermatches.model.SoccerMatchesModel;
 import com.meli.soccermatches.repository.SoccerMatchesRepository;
 import com.meli.soccermatches.service.SoccerMatchesService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -21,11 +20,14 @@ import java.util.Map;
 @RequestMapping("soccer-matches")
 public class SoccerMatchesController {
 
-    @Autowired
-    private SoccerMatchesService soccerMatchesService;
+    private final SoccerMatchesService soccerMatchesService;
 
-    @Autowired
-    private SoccerMatchesRepository soccerMatchesRepository;
+    private final SoccerMatchesRepository soccerMatchesRepository;
+
+    public SoccerMatchesController(SoccerMatchesService soccerMatchesService, SoccerMatchesRepository soccerMatchesRepository) {
+        this.soccerMatchesService = soccerMatchesService;
+        this.soccerMatchesRepository = soccerMatchesRepository;
+    }
 
     @GetMapping
     public ResponseEntity<List<SoccerMatchesModel>> getAllPartidas() {
@@ -84,7 +86,7 @@ public class SoccerMatchesController {
     }
 
     @ControllerAdvice
-    public class CustomExceptionHandler {
+    public static class CustomExceptionHandler {
 
         @ExceptionHandler(MethodArgumentNotValidException.class)
         public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
