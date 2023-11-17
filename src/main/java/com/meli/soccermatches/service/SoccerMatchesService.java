@@ -16,7 +16,7 @@ import java.util.Optional;
 @Service
 public class SoccerMatchesService {
 
-    private final SoccerMatchesRepository soccerMatchesRepository;
+    public final SoccerMatchesRepository soccerMatchesRepository;
 
     public SoccerMatchesService(SoccerMatchesRepository soccerMatchesRepository) {
         this.soccerMatchesRepository = soccerMatchesRepository;
@@ -77,7 +77,7 @@ public class SoccerMatchesService {
         soccerMatchesModel.setResultadoClubeMandante(soccerMatchesDto.getResultadoClubeMandante());
         soccerMatchesModel.setNomeClubeVisitante(soccerMatchesDto.getNomeClubeVisitante());
         soccerMatchesModel.setResultadoClubeVisitante(soccerMatchesDto.getResultadoClubeVisitante());
-        soccerMatchesModel.setDataHora(soccerMatchesDto.getDataHora());
+        soccerMatchesModel.setDataHora(String.valueOf(soccerMatchesDto.getDataHora()));
         soccerMatchesModel.setEstadio(soccerMatchesDto.getEstadio());
         soccerMatchesRepository.save(soccerMatchesModel);
         return "OK: Partida " + soccerMatchesModel.getId() + " adicionada ao banco de dados";
@@ -131,7 +131,7 @@ public class SoccerMatchesService {
                     item.setResultadoClubeMandante(soccerMatchesDto.getResultadoClubeMandante());
                     item.setNomeClubeVisitante(soccerMatchesDto.getNomeClubeVisitante());
                     item.setResultadoClubeVisitante(soccerMatchesDto.getResultadoClubeVisitante());
-                    item.setDataHora(soccerMatchesDto.getDataHora());
+                    item.setDataHora(String.valueOf(soccerMatchesDto.getDataHora()));
                     item.setEstadio(soccerMatchesDto.getEstadio());
                     SoccerMatchesModel atualizaSoccerMatchesModel = soccerMatchesRepository.save(item);
                     return ResponseEntity.ok().body(atualizaSoccerMatchesModel);

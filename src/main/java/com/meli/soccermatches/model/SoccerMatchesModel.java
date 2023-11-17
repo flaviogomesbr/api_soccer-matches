@@ -61,8 +61,8 @@ public class SoccerMatchesModel {
         this.resultadoClubeVisitante = resultadoClubeVisitante;
     }
 
-    public void setDataHora(LocalDateTime dataHora) {
-        this.dataHora = dataHora;
+    public void setDataHora(String dataHora) {
+        this.dataHora = LocalDateTime.parse(dataHora);
     }
 
     public void setEstadio(String estadio) {
