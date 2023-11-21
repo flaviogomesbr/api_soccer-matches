@@ -57,7 +57,7 @@ Garantir a instalação dos "Requisitos da máquina" listados anteriormente;
 Clonar este projeto para a sua máquina e executar o seguinte comando dentro do MySQL WorkBench (ou outro software equivalente técnico):
 
 ```sh
-create database soccer_matches_db;
+create database soccer_matches_db
 ```
 
 Abrir e executar o projeto dentro da IDE IntelliJ (ou outro software equivalente técnico);
