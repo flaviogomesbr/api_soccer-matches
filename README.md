@@ -16,7 +16,7 @@ API em Java (Spring Boot) para salvar partidas de futebol, persistindo os dados 
 **Tecnologias**
 
 - Java 17 ou 21
-- SpringBoot
+- Spring Boot
 - Persistir os dados em um banco de dados relacional (MySQL, Postgres, SQLite, H2, HSQLDB, etc.)
 
 **Operações básicas que a aplicação deverá permitir**
